@@ -1,4 +1,4 @@
-package com.example.repayer
+package jp.ido.repayer
 
 import io.flutter.embedding.android.FlutterActivity
 
