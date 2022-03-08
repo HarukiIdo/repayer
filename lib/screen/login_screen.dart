@@ -1,6 +1,7 @@
 import 'package:repayer/screen/select_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final infoTextProvider = StateProvider<String>((ref) => '');
@@ -12,8 +13,8 @@ class LoginScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final emailTextEditingController = TextEditingController();
-    final passwordTextEditingController = TextEditingController();
+    final emailTextEditingController = useTextEditingController();
+    final passwordTextEditingController = useTextEditingController();
     final infoText = ref.watch(infoTextProvider);
     final email = ref.watch(emailProvider);
     final password = ref.watch(passwordProvider);
@@ -30,6 +31,7 @@ class LoginScreen extends HookConsumerWidget {
                 onChanged: (String value) {
                   ref.read(emailProvider.notifier).state = value;
                 },
+                focusNode: useFocusNode(),
                 controller: emailTextEditingController,
               ),
               TextFormField(
@@ -47,11 +49,12 @@ class LoginScreen extends HookConsumerWidget {
                   onPressed: () async {
                     try {
                       final FirebaseAuth auth = FirebaseAuth.instance;
-                      await auth.signInWithEmailAndPassword(
+                      await auth.createUserWithEmailAndPassword(
                           email: email, password: password);
+                      print('登録成功！');
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: ((context) => SelectionScreen()),
+                          builder: ((context) => const SelectionScreen()),
                         ),
                       );
                     } catch (e) {
@@ -77,6 +80,7 @@ class LoginScreen extends HookConsumerWidget {
                       final FirebaseAuth auth = FirebaseAuth.instance;
                       await auth.signInWithEmailAndPassword(
                           email: email, password: password);
+                      print('ログイン成功！');
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: ((context) => SelectionScreen()),

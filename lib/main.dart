@@ -1,7 +1,5 @@
-import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:repayer/screen/login_screen.dart';
-import 'package:repayer/screen/repay_screen.dart';
 import 'package:repayer/screen/select_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -13,9 +11,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp();
 
   runApp(
     const ProviderScope(
@@ -44,24 +40,8 @@ class App extends StatelessWidget {
 
   @override
   build(BuildContext context) {
-    return const Scaffold(body: LoginScreen());
+    return FirebaseAuth.instance.currentUser == null
+        ? LoginScreen()
+        : SelectionScreen();
   }
-}
-
-Future _connectToFirebaseEmulator() async {
-  final localhost = Platform.isAndroid ? '10.0.2.2' : 'localhost';
-
-  FirebaseFirestore.instance.settings = Settings(
-    host: '$localhost:8080',
-    sslEnabled: false,
-    persistenceEnabled: false,
-  );
-
-  FirebaseFirestore.instance.useFirestoreEmulator(localhost, 8022);
-
-  await Future.wait(
-    [
-      FirebaseAuth.instance.useAuthEmulator(localhost, 9099),
-    ],
-  );
 }
