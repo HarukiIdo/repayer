@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "359347316467",
+    "project_id": "repayer-stg",
+    "storage_bucket": "repayer-stg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359347316467:android:026cd1f84082635de43986",
+        "android_client_info": {
+          "package_name": "jp.ido.repayer.stg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359347316467-2f954480iud2eqcfd5humg4o2j8ghsk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-eUqysVcYUWocwR9BAi0ie6cZxTWL6ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359347316467-2f954480iud2eqcfd5humg4o2j8ghsk6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "359347316467-0kvejuq9ir4imvmvu7q8mnlitk7fjl5m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jp.ido.repayer.stg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
