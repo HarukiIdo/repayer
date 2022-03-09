@@ -12,13 +12,20 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   const useEmulator = bool.fromEnvironment('USE_EMULATOR');
+  const flavor = String.fromEnvironment('FLAVOR');
+  print(flavor);
+  print(useEmulator);
 
-  //if (useEmulator) {
-  await _connectToFirebaseEmulator();
-  //}
+  if (useEmulator) {
+    await _connectToFirebaseEmulator();
+  }
+
+  //FirebaseAuth.instance.signOut();
 
   runApp(
     const ProviderScope(

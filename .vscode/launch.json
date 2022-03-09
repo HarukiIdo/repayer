@@ -1,0 +1,40 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "repayer-stg",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=FLAVOR=${input:flavor}",
+        "--dart-define=USE_EMULATOR=${input:use_emulator}"
+      ],
+    },
+  ],
+  "inputs": [
+    {
+      "id": "flavor",
+      "description": "フレーバーを選択してください",
+      "type": "pickString",
+      "default": "stg",
+      "options": [
+        "stg",
+        "prod"
+      ]
+    },
+    {
+      "id": "use_emulator",
+      "description": "ローカルのFirebaseエミュレータに接続しますか？ false：実際のFirebaseに接続",
+      "type": "pickString",
+      "default": "true",
+      "options": [
+        "true",
+        "false"
+      ]
+    }
+  ]
+}
