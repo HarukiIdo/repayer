@@ -62,17 +62,7 @@ class SelectionScreen extends HookConsumerWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.logout),
-                      onPressed: () async {
-                        await _auth.signOut();
-                        await Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
-                          ),
-                        );
-                      },
-                    ),
+                    trailing: const Icon(Icons.logout),
                     onTap: () async {
                       await _auth.signOut();
                       await Navigator.of(context).pushReplacement(
@@ -81,7 +71,25 @@ class SelectionScreen extends HookConsumerWidget {
                         ),
                       );
                     },
-                  )
+                  ),
+                  ListTile(
+                    title: const Text(
+                      'アカウント削除',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    trailing: const Icon(Icons.close),
+                    onTap: () async {
+                      await _auth.signOut();
+                      await Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

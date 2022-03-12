@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:repayer/domain/data/user/user.dart';
 import 'package:repayer/domain/service/auth_service.dart';
-import 'package:repayer/domain/repostiroy/user_repository.dart';
+import 'package:repayer/domain/repostiroy/firestore/user_repository.dart';
 import 'package:repayer/use_case/base_use_case.dart';
 
 final signInUseCaseProvider = Provider.autoDispose(

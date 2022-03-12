@@ -29,3 +29,15 @@ flutter run --dart-define=FLAVOR=<stg | prod> --dart-define=USE_EMULATOR=<flase 
 ```
 flutter run --dart-define=FLAVOR=<stg | prod> --dart-define=USE_EMULATOR=<flase | true> -d <device ID>
 ```
+
+## コード自動生成
+- fromJson/toJsonを生成する
+- foundation.dartを追加することで、Devtoolでオブジェクトが読みやすくなるらしい
+```
+import 'package:flutter/foundation.dart';
+part 'request_follow_result.g.dart';
+```
+
+```
+flutter pub run build_runner watch --delete-conflicting-outputs
+```
