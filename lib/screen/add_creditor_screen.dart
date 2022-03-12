@@ -31,6 +31,11 @@ class AddCreditorScreen extends HookConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              '返済したい相手のメールアドレスを入力しましょう',
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            const SizedBox(height: 8),
             TextFormField(
               decoration: const InputDecoration(
                 labelText: 'メールアドレス',
@@ -39,6 +44,11 @@ class AddCreditorScreen extends HookConsumerWidget {
                 ref.read(sendEmailTextProvider.notifier).state = value;
               },
               controller: emailTextEditingController,
+            ),
+            const SizedBox(height: 8),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('送信'),
             ),
           ],
         ),
