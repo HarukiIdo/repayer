@@ -39,4 +39,10 @@ class FollowRequestRepository {
 
     return docs.map((e) => e.data()).toList();
   }
+
+  Stream<List<FollowRequest>> stream({required String userId}) {
+    return _collection(userId: userId)
+        .snapshots()
+        .asyncMap((e) => e.docs.map((e) => e.data()).toList());
+  }
 }

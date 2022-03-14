@@ -8,6 +8,7 @@ import 'package:repayer/state/auth_state.dart';
 final infoTextProvider = StateProvider<String>((ref) => '');
 final emailProvider = StateProvider<String>((ref) => '');
 final passwordProvider = StateProvider<String>((ref) => '');
+final displayNameProvider = StateProvider<String>((ref) => '');
 
 class LoginScreen extends HookConsumerWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class LoginScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final emailTextEditingController = useTextEditingController();
     final passwordTextEditingController = useTextEditingController();
+    final displayNameTextEditingController = useTextEditingController();
     final infoText = ref.watch(infoTextProvider);
     final email = ref.watch(emailProvider);
     final password = ref.watch(passwordProvider);
@@ -27,6 +29,14 @@ class LoginScreen extends HookConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              TextFormField(
+                decoration: const InputDecoration(labelText: '名前'),
+                onChanged: (String value) {
+                  ref.read(displayNameProvider.notifier).state = value;
+                },
+                focusNode: useFocusNode(),
+                controller: displayNameTextEditingController,
+              ),
               TextFormField(
                 decoration: const InputDecoration(labelText: 'メールアドレス'),
                 onChanged: (String value) {

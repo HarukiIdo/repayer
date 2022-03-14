@@ -11,6 +11,8 @@ _$_FollowRequest _$$_FollowRequestFromJson(Map<String, dynamic> json) =>
       docId: json['docId'] as String?,
       followUserEmail: json['followUserEmail'] as String,
       followUserId: json['followUserId'] as String,
+      process: const StringFollowRequestProcessConverter()
+          .fromJson(json['process'] as String),
     );
 
 Map<String, dynamic> _$$_FollowRequestToJson(_$_FollowRequest instance) =>
@@ -18,4 +20,6 @@ Map<String, dynamic> _$$_FollowRequestToJson(_$_FollowRequest instance) =>
       'docId': instance.docId,
       'followUserEmail': instance.followUserEmail,
       'followUserId': instance.followUserId,
+      'process':
+          const StringFollowRequestProcessConverter().toJson(instance.process),
     };

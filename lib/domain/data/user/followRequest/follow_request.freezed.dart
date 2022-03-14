@@ -25,11 +25,14 @@ class _$FollowRequestTearOff {
   _FollowRequest call(
       {String? docId,
       required String followUserEmail,
-      required String followUserId}) {
+      required String followUserId,
+      @StringFollowRequestProcessConverter()
+          required FollowRequestProcess process}) {
     return _FollowRequest(
       docId: docId,
       followUserEmail: followUserEmail,
       followUserId: followUserId,
+      process: process,
     );
   }
 
@@ -46,6 +49,8 @@ mixin _$FollowRequest {
   String? get docId => throw _privateConstructorUsedError;
   String get followUserEmail => throw _privateConstructorUsedError;
   String get followUserId => throw _privateConstructorUsedError;
+  @StringFollowRequestProcessConverter()
+  FollowRequestProcess get process => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -58,7 +63,11 @@ abstract class $FollowRequestCopyWith<$Res> {
   factory $FollowRequestCopyWith(
           FollowRequest value, $Res Function(FollowRequest) then) =
       _$FollowRequestCopyWithImpl<$Res>;
-  $Res call({String? docId, String followUserEmail, String followUserId});
+  $Res call(
+      {String? docId,
+      String followUserEmail,
+      String followUserId,
+      @StringFollowRequestProcessConverter() FollowRequestProcess process});
 }
 
 /// @nodoc
@@ -75,6 +84,7 @@ class _$FollowRequestCopyWithImpl<$Res>
     Object? docId = freezed,
     Object? followUserEmail = freezed,
     Object? followUserId = freezed,
+    Object? process = freezed,
   }) {
     return _then(_value.copyWith(
       docId: docId == freezed
@@ -89,6 +99,10 @@ class _$FollowRequestCopyWithImpl<$Res>
           ? _value.followUserId
           : followUserId // ignore: cast_nullable_to_non_nullable
               as String,
+      process: process == freezed
+          ? _value.process
+          : process // ignore: cast_nullable_to_non_nullable
+              as FollowRequestProcess,
     ));
   }
 }
@@ -100,7 +114,11 @@ abstract class _$FollowRequestCopyWith<$Res>
           _FollowRequest value, $Res Function(_FollowRequest) then) =
       __$FollowRequestCopyWithImpl<$Res>;
   @override
-  $Res call({String? docId, String followUserEmail, String followUserId});
+  $Res call(
+      {String? docId,
+      String followUserEmail,
+      String followUserId,
+      @StringFollowRequestProcessConverter() FollowRequestProcess process});
 }
 
 /// @nodoc
@@ -119,6 +137,7 @@ class __$FollowRequestCopyWithImpl<$Res>
     Object? docId = freezed,
     Object? followUserEmail = freezed,
     Object? followUserId = freezed,
+    Object? process = freezed,
   }) {
     return _then(_FollowRequest(
       docId: docId == freezed
@@ -133,6 +152,10 @@ class __$FollowRequestCopyWithImpl<$Res>
           ? _value.followUserId
           : followUserId // ignore: cast_nullable_to_non_nullable
               as String,
+      process: process == freezed
+          ? _value.process
+          : process // ignore: cast_nullable_to_non_nullable
+              as FollowRequestProcess,
     ));
   }
 }
@@ -141,7 +164,10 @@ class __$FollowRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FollowRequest with DiagnosticableTreeMixin implements _FollowRequest {
   _$_FollowRequest(
-      {this.docId, required this.followUserEmail, required this.followUserId});
+      {this.docId,
+      required this.followUserEmail,
+      required this.followUserId,
+      @StringFollowRequestProcessConverter() required this.process});
 
   factory _$_FollowRequest.fromJson(Map<String, dynamic> json) =>
       _$$_FollowRequestFromJson(json);
@@ -152,10 +178,13 @@ class _$_FollowRequest with DiagnosticableTreeMixin implements _FollowRequest {
   final String followUserEmail;
   @override
   final String followUserId;
+  @override
+  @StringFollowRequestProcessConverter()
+  final FollowRequestProcess process;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FollowRequest(docId: $docId, followUserEmail: $followUserEmail, followUserId: $followUserId)';
+    return 'FollowRequest(docId: $docId, followUserEmail: $followUserEmail, followUserId: $followUserId, process: $process)';
   }
 
   @override
@@ -165,7 +194,8 @@ class _$_FollowRequest with DiagnosticableTreeMixin implements _FollowRequest {
       ..add(DiagnosticsProperty('type', 'FollowRequest'))
       ..add(DiagnosticsProperty('docId', docId))
       ..add(DiagnosticsProperty('followUserEmail', followUserEmail))
-      ..add(DiagnosticsProperty('followUserId', followUserId));
+      ..add(DiagnosticsProperty('followUserId', followUserId))
+      ..add(DiagnosticsProperty('process', process));
   }
 
   @override
@@ -177,7 +207,8 @@ class _$_FollowRequest with DiagnosticableTreeMixin implements _FollowRequest {
             const DeepCollectionEquality()
                 .equals(other.followUserEmail, followUserEmail) &&
             const DeepCollectionEquality()
-                .equals(other.followUserId, followUserId));
+                .equals(other.followUserId, followUserId) &&
+            const DeepCollectionEquality().equals(other.process, process));
   }
 
   @override
@@ -185,7 +216,8 @@ class _$_FollowRequest with DiagnosticableTreeMixin implements _FollowRequest {
       runtimeType,
       const DeepCollectionEquality().hash(docId),
       const DeepCollectionEquality().hash(followUserEmail),
-      const DeepCollectionEquality().hash(followUserId));
+      const DeepCollectionEquality().hash(followUserId),
+      const DeepCollectionEquality().hash(process));
 
   @JsonKey(ignore: true)
   @override
@@ -202,7 +234,9 @@ abstract class _FollowRequest implements FollowRequest {
   factory _FollowRequest(
       {String? docId,
       required String followUserEmail,
-      required String followUserId}) = _$_FollowRequest;
+      required String followUserId,
+      @StringFollowRequestProcessConverter()
+          required FollowRequestProcess process}) = _$_FollowRequest;
 
   factory _FollowRequest.fromJson(Map<String, dynamic> json) =
       _$_FollowRequest.fromJson;
@@ -213,6 +247,9 @@ abstract class _FollowRequest implements FollowRequest {
   String get followUserEmail;
   @override
   String get followUserId;
+  @override
+  @StringFollowRequestProcessConverter()
+  FollowRequestProcess get process;
   @override
   @JsonKey(ignore: true)
   _$FollowRequestCopyWith<_FollowRequest> get copyWith =>

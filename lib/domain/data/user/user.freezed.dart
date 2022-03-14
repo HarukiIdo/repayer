@@ -22,10 +22,11 @@ User _$UserFromJson(Map<String, dynamic> json) {
 class _$UserTearOff {
   const _$UserTearOff();
 
-  _User call({String uid = '', String email = ''}) {
+  _User call({String uid = '', String email = '', String displayName = ''}) {
     return _User(
       uid: uid,
       email: email,
+      displayName: displayName,
     );
   }
 
@@ -41,6 +42,7 @@ const $User = _$UserTearOff();
 mixin _$User {
   String get uid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get displayName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,7 +53,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({String uid, String email});
+  $Res call({String uid, String email, String displayName});
 }
 
 /// @nodoc
@@ -66,6 +68,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   $Res call({
     Object? uid = freezed,
     Object? email = freezed,
+    Object? displayName = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed
@@ -76,6 +79,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -85,7 +92,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({String uid, String email});
+  $Res call({String uid, String email, String displayName});
 }
 
 /// @nodoc
@@ -101,6 +108,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   $Res call({
     Object? uid = freezed,
     Object? email = freezed,
+    Object? displayName = freezed,
   }) {
     return _then(_User(
       uid: uid == freezed
@@ -111,6 +119,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -118,7 +130,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_User with DiagnosticableTreeMixin implements _User {
-  _$_User({this.uid = '', this.email = ''});
+  _$_User({this.uid = '', this.email = '', this.displayName = ''});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -128,10 +140,13 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   @JsonKey()
   @override
   final String email;
+  @JsonKey()
+  @override
+  final String displayName;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(uid: $uid, email: $email)';
+    return 'User(uid: $uid, email: $email, displayName: $displayName)';
   }
 
   @override
@@ -140,7 +155,8 @@ class _$_User with DiagnosticableTreeMixin implements _User {
     properties
       ..add(DiagnosticsProperty('type', 'User'))
       ..add(DiagnosticsProperty('uid', uid))
-      ..add(DiagnosticsProperty('email', email));
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('displayName', displayName));
   }
 
   @override
@@ -149,14 +165,17 @@ class _$_User with DiagnosticableTreeMixin implements _User {
         (other.runtimeType == runtimeType &&
             other is _User &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.email, email));
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality()
+                .equals(other.displayName, displayName));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(email));
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(displayName));
 
   @JsonKey(ignore: true)
   @override
@@ -170,7 +189,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 }
 
 abstract class _User implements User {
-  factory _User({String uid, String email}) = _$_User;
+  factory _User({String uid, String email, String displayName}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -178,6 +197,8 @@ abstract class _User implements User {
   String get uid;
   @override
   String get email;
+  @override
+  String get displayName;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
