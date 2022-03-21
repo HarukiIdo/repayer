@@ -1,7 +1,7 @@
 import 'package:async/async.dart';
 import 'package:repayer/domain/data/auth/auth_user.dart';
-import 'package:repayer/domain/service/auth_service.dart';
-import 'package:repayer/domain/use_case/sign_in_use_case.dart';
+import 'package:repayer/domain/service/auth/auth_service.dart';
+import 'package:repayer/domain/use_case/auth/sign_in_use_case.dart';
 import 'package:riverpod/riverpod.dart';
 
 final authStateProvider =

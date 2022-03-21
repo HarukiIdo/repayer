@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:repayer/state/auth_state.dart';
+import 'package:repayer/state/auth/auth_state.dart';
 
 final infoTextProvider = StateProvider<String>((ref) => '');
 final emailProvider = StateProvider<String>((ref) => '');

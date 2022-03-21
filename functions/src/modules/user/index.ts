@@ -1,5 +1,7 @@
-import {onCreateUser} from "./onCreateUser";
-import {checkinviteRequestEmail} from "./invitation/checkInviteRequestEmail";
+import { onCreateUser } from "./onCreateUser";
+import { checkRequestEmail } from "./follow/checkRequestEmail";
+import { createFollowRequest } from "./follow/createFollowRequest";
 
 exports.onCreateUser = onCreateUser;
-exports.checkInviteRequestEmail = checkinviteRequestEmail;
+exports.checkRequestEmail = checkRequestEmail;
+exports.createFollowRequest = createFollowRequest;

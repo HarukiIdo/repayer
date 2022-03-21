@@ -1,6 +1,6 @@
 import 'package:repayer/domain/data/auth/auth_user.dart';
 import 'package:repayer/domain/data/functions/request_follow_result.dart';
-import 'package:repayer/domain/use_case/request_follow_use_case.dart';
+import 'package:repayer/domain/use_case/follow/request_follow_use_case.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:repayer/domain/model/following_user.dart';
 

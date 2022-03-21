@@ -3,3 +3,4 @@ admin.initializeApp();
 
 
 export * from "./modules/user";
+export * from "./modules/follow";

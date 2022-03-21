@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'following_user.dart';
+part of 'following_user_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,59 +14,59 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-FollowingUser _$FollowingUserFromJson(Map<String, dynamic> json) {
-  return _FollowingUser.fromJson(json);
+FollowingUserData _$FollowingUserDataFromJson(Map<String, dynamic> json) {
+  return _FollowingUserData.fromJson(json);
 }
 
 /// @nodoc
-class _$FollowingUserTearOff {
-  const _$FollowingUserTearOff();
+class _$FollowingUserDataTearOff {
+  const _$FollowingUserDataTearOff();
 
-  _FollowingUser call(
+  _FollowingUserData call(
       {String uid = '', String displayName = '', String email = ''}) {
-    return _FollowingUser(
+    return _FollowingUserData(
       uid: uid,
       displayName: displayName,
       email: email,
     );
   }
 
-  FollowingUser fromJson(Map<String, Object?> json) {
-    return FollowingUser.fromJson(json);
+  FollowingUserData fromJson(Map<String, Object?> json) {
+    return FollowingUserData.fromJson(json);
   }
 }
 
 /// @nodoc
-const $FollowingUser = _$FollowingUserTearOff();
+const $FollowingUserData = _$FollowingUserDataTearOff();
 
 /// @nodoc
-mixin _$FollowingUser {
+mixin _$FollowingUserData {
   String get uid => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FollowingUserCopyWith<FollowingUser> get copyWith =>
+  $FollowingUserDataCopyWith<FollowingUserData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FollowingUserCopyWith<$Res> {
-  factory $FollowingUserCopyWith(
-          FollowingUser value, $Res Function(FollowingUser) then) =
-      _$FollowingUserCopyWithImpl<$Res>;
+abstract class $FollowingUserDataCopyWith<$Res> {
+  factory $FollowingUserDataCopyWith(
+          FollowingUserData value, $Res Function(FollowingUserData) then) =
+      _$FollowingUserDataCopyWithImpl<$Res>;
   $Res call({String uid, String displayName, String email});
 }
 
 /// @nodoc
-class _$FollowingUserCopyWithImpl<$Res>
-    implements $FollowingUserCopyWith<$Res> {
-  _$FollowingUserCopyWithImpl(this._value, this._then);
+class _$FollowingUserDataCopyWithImpl<$Res>
+    implements $FollowingUserDataCopyWith<$Res> {
+  _$FollowingUserDataCopyWithImpl(this._value, this._then);
 
-  final FollowingUser _value;
+  final FollowingUserData _value;
   // ignore: unused_field
-  final $Res Function(FollowingUser) _then;
+  final $Res Function(FollowingUserData) _then;
 
   @override
   $Res call({
@@ -92,25 +92,25 @@ class _$FollowingUserCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FollowingUserCopyWith<$Res>
-    implements $FollowingUserCopyWith<$Res> {
-  factory _$FollowingUserCopyWith(
-          _FollowingUser value, $Res Function(_FollowingUser) then) =
-      __$FollowingUserCopyWithImpl<$Res>;
+abstract class _$FollowingUserDataCopyWith<$Res>
+    implements $FollowingUserDataCopyWith<$Res> {
+  factory _$FollowingUserDataCopyWith(
+          _FollowingUserData value, $Res Function(_FollowingUserData) then) =
+      __$FollowingUserDataCopyWithImpl<$Res>;
   @override
   $Res call({String uid, String displayName, String email});
 }
 
 /// @nodoc
-class __$FollowingUserCopyWithImpl<$Res>
-    extends _$FollowingUserCopyWithImpl<$Res>
-    implements _$FollowingUserCopyWith<$Res> {
-  __$FollowingUserCopyWithImpl(
-      _FollowingUser _value, $Res Function(_FollowingUser) _then)
-      : super(_value, (v) => _then(v as _FollowingUser));
+class __$FollowingUserDataCopyWithImpl<$Res>
+    extends _$FollowingUserDataCopyWithImpl<$Res>
+    implements _$FollowingUserDataCopyWith<$Res> {
+  __$FollowingUserDataCopyWithImpl(
+      _FollowingUserData _value, $Res Function(_FollowingUserData) _then)
+      : super(_value, (v) => _then(v as _FollowingUserData));
 
   @override
-  _FollowingUser get _value => super._value as _FollowingUser;
+  _FollowingUserData get _value => super._value as _FollowingUserData;
 
   @override
   $Res call({
@@ -118,7 +118,7 @@ class __$FollowingUserCopyWithImpl<$Res>
     Object? displayName = freezed,
     Object? email = freezed,
   }) {
-    return _then(_FollowingUser(
+    return _then(_FollowingUserData(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -137,11 +137,13 @@ class __$FollowingUserCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FollowingUser with DiagnosticableTreeMixin implements _FollowingUser {
-  _$_FollowingUser({this.uid = '', this.displayName = '', this.email = ''});
+class _$_FollowingUserData extends _FollowingUserData
+    with DiagnosticableTreeMixin {
+  _$_FollowingUserData({this.uid = '', this.displayName = '', this.email = ''})
+      : super._();
 
-  factory _$_FollowingUser.fromJson(Map<String, dynamic> json) =>
-      _$$_FollowingUserFromJson(json);
+  factory _$_FollowingUserData.fromJson(Map<String, dynamic> json) =>
+      _$$_FollowingUserDataFromJson(json);
 
   @JsonKey()
   @override
@@ -155,14 +157,14 @@ class _$_FollowingUser with DiagnosticableTreeMixin implements _FollowingUser {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FollowingUser(uid: $uid, displayName: $displayName, email: $email)';
+    return 'FollowingUserData(uid: $uid, displayName: $displayName, email: $email)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'FollowingUser'))
+      ..add(DiagnosticsProperty('type', 'FollowingUserData'))
       ..add(DiagnosticsProperty('uid', uid))
       ..add(DiagnosticsProperty('displayName', displayName))
       ..add(DiagnosticsProperty('email', email));
@@ -172,7 +174,7 @@ class _$_FollowingUser with DiagnosticableTreeMixin implements _FollowingUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FollowingUser &&
+            other is _FollowingUserData &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
                 .equals(other.displayName, displayName) &&
@@ -188,21 +190,22 @@ class _$_FollowingUser with DiagnosticableTreeMixin implements _FollowingUser {
 
   @JsonKey(ignore: true)
   @override
-  _$FollowingUserCopyWith<_FollowingUser> get copyWith =>
-      __$FollowingUserCopyWithImpl<_FollowingUser>(this, _$identity);
+  _$FollowingUserDataCopyWith<_FollowingUserData> get copyWith =>
+      __$FollowingUserDataCopyWithImpl<_FollowingUserData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FollowingUserToJson(this);
+    return _$$_FollowingUserDataToJson(this);
   }
 }
 
-abstract class _FollowingUser implements FollowingUser {
-  factory _FollowingUser({String uid, String displayName, String email}) =
-      _$_FollowingUser;
+abstract class _FollowingUserData extends FollowingUserData {
+  factory _FollowingUserData({String uid, String displayName, String email}) =
+      _$_FollowingUserData;
+  _FollowingUserData._() : super._();
 
-  factory _FollowingUser.fromJson(Map<String, dynamic> json) =
-      _$_FollowingUser.fromJson;
+  factory _FollowingUserData.fromJson(Map<String, dynamic> json) =
+      _$_FollowingUserData.fromJson;
 
   @override
   String get uid;
@@ -212,6 +215,6 @@ abstract class _FollowingUser implements FollowingUser {
   String get email;
   @override
   @JsonKey(ignore: true)
-  _$FollowingUserCopyWith<_FollowingUser> get copyWith =>
+  _$FollowingUserDataCopyWith<_FollowingUserData> get copyWith =>
       throw _privateConstructorUsedError;
 }
