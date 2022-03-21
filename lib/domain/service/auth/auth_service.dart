@@ -29,6 +29,11 @@ class AuthService {
 
   bool isLoggedIn() => _auth.currentUser != null;
 
+  String fetchUserId() {
+    final currentUser = _auth.currentUser;
+    return currentUser!.uid;
+  }
+
   Future<AuthData> signUp({
     required String email,
     required String password,
@@ -64,5 +69,9 @@ class AuthService {
 
   Future<void> signOut() async {
     await _auth.signOut();
+  }
+
+  Future<void> deleteUser() async {
+    await _auth.currentUser!.delete();
   }
 }

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:repayer/screen/login_screen.dart';
 import 'package:repayer/screen/select_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,9 +17,9 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  const useEmulator = bool.fromEnvironment('USE_EMULATOR');
   const flavor = String.fromEnvironment('FLAVOR');
   print(flavor);
+  const useEmulator = bool.fromEnvironment('USE_EMULATOR');
   print(useEmulator);
 
   if (useEmulator) {
@@ -55,8 +56,8 @@ class App extends StatelessWidget {
   @override
   build(BuildContext context) {
     return FirebaseAuth.instance.currentUser == null
-        ? LoginScreen()
-        : SelectionScreen();
+        ? const LoginScreen()
+        : const SelectionScreen();
   }
 }
 
@@ -70,6 +71,8 @@ Future _connectToFirebaseEmulator() async {
   );
 
   FirebaseFirestore.instance.useFirestoreEmulator(localhost, 8022);
+  FirebaseFunctions.instanceFor(region: 'asia-northeast1')
+      .useFunctionsEmulator(localhost, 5001);
 
   await Future.wait(
     [

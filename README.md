@@ -36,6 +36,15 @@ flutter run --dart-define=FLAVOR=<stg | prod> --dart-define=USE_EMULATOR=<flase 
 flutter run --dart-define=FLAVOR=<stg | prod> --dart-define=USE_EMULATOR=<flase | true> -d <device ID>
 ```
 
+## functionのデプロイ
+一度のデプロイする数は10個まで
+```
+cd functios
+firebase deploy --only functions:<関数名,関数名,...> --project <プロジェクトID> 
+```
+
+
+
 ## コード自動生成
 - fromJson/toJsonを生成する
 - foundation.dartを追加することで、Devtoolでオブジェクトが読みやすくなるらしい

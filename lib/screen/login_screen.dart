@@ -1,3 +1,4 @@
+import 'package:repayer/domain/service/auth/auth_service.dart';
 import 'package:repayer/screen/select_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class LoginScreen extends HookConsumerWidget {
     final infoText = ref.watch(infoTextProvider);
     final email = ref.watch(emailProvider);
     final password = ref.watch(passwordProvider);
+    final _auth = FirebaseAuth.instance;
 
     return Scaffold(
       body: Center(
@@ -59,9 +61,11 @@ class LoginScreen extends HookConsumerWidget {
                 child: ElevatedButton(
                   onPressed: () async {
                     try {
-                      final FirebaseAuth auth = FirebaseAuth.instance;
-                      await auth.createUserWithEmailAndPassword(
-                          email: email, password: password);
+                      ref
+                          .watch(authStateProvider.notifier)
+                          .signUp(email: email, password: password);
+                      await _auth.currentUser?.updateDisplayName(
+                          displayNameTextEditingController.text);
                       print('登録成功！');
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(

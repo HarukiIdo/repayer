@@ -4,6 +4,8 @@ import 'package:repayer/screen/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:repayer/domain/service/auth/auth_service.dart';
+import 'package:repayer/state/auth/auth_state.dart';
 
 final sendEmailTextProvider = StateProvider<String>((ref) => '');
 
@@ -17,7 +19,7 @@ class SelectionScreen extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("返済する相手を選択"),
+        title: Text('${_auth.currentUser!.displayName!}さん'),
         actions: [
           IconButton(
             onPressed: () async {
@@ -64,6 +66,7 @@ class SelectionScreen extends HookConsumerWidget {
                     ),
                     trailing: const Icon(Icons.logout),
                     onTap: () async {
+                      ref.read(authStateProvider.notifier).signOut();
                       await _auth.signOut();
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
@@ -82,7 +85,7 @@ class SelectionScreen extends HookConsumerWidget {
                     ),
                     trailing: const Icon(Icons.close),
                     onTap: () async {
-                      await _auth.signOut();
+                      await ref.read(authStateProvider.notifier).deleteUser();
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),
@@ -98,20 +101,31 @@ class SelectionScreen extends HookConsumerWidget {
       ),
       body: Container(
         padding: const EdgeInsets.all(8),
-        child: ListView(
-          children: const [
-            Text('山田さん'),
-            SizedBox(
-              height: 8,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'お金を管理したい相手を選択',
+              style: Theme.of(context).textTheme.headline5,
             ),
-            Text('田中さん'),
-            SizedBox(
-              height: 8,
+            const SizedBox(height: 8),
+            ListView(
+              shrinkWrap: true,
+              children: const [
+                Text('山田さん'),
+                SizedBox(
+                  height: 8,
+                ),
+                Text('田中さん'),
+                SizedBox(
+                  height: 8,
+                ),
+                Text('吉田さん'),
+                SizedBox(
+                  height: 8,
+                )
+              ],
             ),
-            Text('吉田さん'),
-            SizedBox(
-              height: 8,
-            )
           ],
         ),
       ),
