@@ -6,7 +6,7 @@
 1. 借りた人が金額を入力すると、貸した人に通知が送られる
 2. 借りた人が返済し、貸した人に承認すると合計金額から差し引かれる
 
-[プロジェクト](https://github.com/HarukiIdo/repayer/projects/1)
+[プロジェクト](https://github.com/HarukiIdo/repayer/projects/1)  
 [デザイン](https://www.figma.com/file/EA49D3fj7exSX6VD57mOmo/repayer?node-id=0%3A1)
 
 
