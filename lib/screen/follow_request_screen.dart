@@ -69,7 +69,7 @@ class FollowRequestScreen extends HookConsumerWidget {
 
                 if (result != null) {
                   if (result.result) {
-                    print("OK");
+                    
                   }
                 }
               },
