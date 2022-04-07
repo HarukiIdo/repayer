@@ -1,31 +1,26 @@
-import 'package:flutter/widgets.dart';
 import 'package:repayer/screen/add_creditor_screen.dart';
 import 'package:repayer/screen/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:repayer/domain/service/auth/auth_service.dart';
 import 'package:repayer/state/auth/auth_state.dart';
 
-final sendEmailTextProvider = StateProvider<String>((ref) => '');
-
-class SelectionScreen extends HookConsumerWidget {
-  const SelectionScreen({Key? key}) : super(key: key);
+class SelectScreen extends HookConsumerWidget {
+  const SelectScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final _auth = FirebaseAuth.instance;
-    final email = ref.watch(sendEmailTextProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('${_auth.currentUser!.displayName!}さん'),
+        title: Text('${_auth.currentUser!.displayName}さん'),
         actions: [
           IconButton(
             onPressed: () async {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => AddCreditorScreen(),
+                  builder: (context) => const AddCreditorScreen(),
                 ),
               );
             },
@@ -34,7 +29,7 @@ class SelectionScreen extends HookConsumerWidget {
         ],
       ),
       drawer: SafeArea(
-        child: Container(
+        child: SizedBox(
           width: 200,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
@@ -67,7 +62,6 @@ class SelectionScreen extends HookConsumerWidget {
                     trailing: const Icon(Icons.logout),
                     onTap: () async {
                       ref.read(authStateProvider.notifier).signOut();
-                      await _auth.signOut();
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),
@@ -85,7 +79,7 @@ class SelectionScreen extends HookConsumerWidget {
                     ),
                     trailing: const Icon(Icons.close),
                     onTap: () async {
-                      await ref.read(authStateProvider.notifier).deleteUser();
+                      ref.read(authStateProvider.notifier).deleteUser();
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),

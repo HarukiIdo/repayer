@@ -1,4 +1,3 @@
-import 'package:repayer/domain/service/auth/auth_service.dart';
 import 'package:repayer/screen/select_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -64,12 +63,11 @@ class LoginScreen extends HookConsumerWidget {
                       ref
                           .watch(authStateProvider.notifier)
                           .signUp(email: email, password: password);
-                      await _auth.currentUser?.updateDisplayName(
+                      await _auth.currentUser!.updateDisplayName(
                           displayNameTextEditingController.text);
-                      print('登録成功！');
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: ((context) => const SelectionScreen()),
+                          builder: ((context) => const SelectScreen()),
                         ),
                       );
                     } catch (e) {
@@ -95,10 +93,9 @@ class LoginScreen extends HookConsumerWidget {
                       ref
                           .watch(authStateProvider.notifier)
                           .signIn(email: email, password: password);
-                      print('ログイン成功！');
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: ((context) => SelectionScreen()),
+                          builder: ((context) => const SelectScreen()),
                         ),
                       );
                     } catch (e) {

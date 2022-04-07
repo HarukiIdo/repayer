@@ -1,8 +1,8 @@
-import 'package:repayer/domain/data/user/user.dart';
-import 'package:repayer/domain/repostiroy/firestore/user_repository.dart';
-import 'package:repayer/domain/service/auth/auth_service.dart';
+import 'package:repayer/data/datasource/user/user.dart';
+import 'package:repayer/data/repostiroy/firestore/user_repository.dart';
+import 'package:repayer/data/service/auth/auth_service.dart';
 import 'package:repayer/domain/use_case/base_use_case.dart';
-import 'package:repayer/domain/data/auth/auth_user.dart';
+import 'package:repayer/data/datasource/auth/auth_user.dart';
 import 'package:riverpod/riverpod.dart';
 
 final getAuthUserUseCaseProvider =

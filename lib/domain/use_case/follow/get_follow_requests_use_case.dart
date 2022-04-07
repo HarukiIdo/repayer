@@ -1,4 +1,4 @@
-import 'package:repayer/domain/data/user/followRequest/follow_request.dart';
+import 'package:repayer/data/datasource/user/followRequest/follow_request.dart';
 import 'package:repayer/domain/use_case/base_use_case.dart';
 
 class FollowReqests {

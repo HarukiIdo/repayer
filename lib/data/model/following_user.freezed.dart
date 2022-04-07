@@ -20,14 +20,12 @@ class _$FollowingUserTearOff {
 
   _FollowingUser call(
       {required String uid,
-      required String displyaName,
-      required String email,
-      required String createdAt}) {
+      required String displayName,
+      required String email}) {
     return _FollowingUser(
       uid: uid,
-      displyaName: displyaName,
+      displayName: displayName,
       email: email,
-      createdAt: createdAt,
     );
   }
 }
@@ -38,9 +36,8 @@ const $FollowingUser = _$FollowingUserTearOff();
 /// @nodoc
 mixin _$FollowingUser {
   String get uid => throw _privateConstructorUsedError;
-  String get displyaName => throw _privateConstructorUsedError;
+  String get displayName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get createdAt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FollowingUserCopyWith<FollowingUser> get copyWith =>
@@ -52,7 +49,7 @@ abstract class $FollowingUserCopyWith<$Res> {
   factory $FollowingUserCopyWith(
           FollowingUser value, $Res Function(FollowingUser) then) =
       _$FollowingUserCopyWithImpl<$Res>;
-  $Res call({String uid, String displyaName, String email, String createdAt});
+  $Res call({String uid, String displayName, String email});
 }
 
 /// @nodoc
@@ -67,26 +64,21 @@ class _$FollowingUserCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = freezed,
-    Object? displyaName = freezed,
+    Object? displayName = freezed,
     Object? email = freezed,
-    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      displyaName: displyaName == freezed
-          ? _value.displyaName
-          : displyaName // ignore: cast_nullable_to_non_nullable
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: createdAt == freezed
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -99,7 +91,7 @@ abstract class _$FollowingUserCopyWith<$Res>
           _FollowingUser value, $Res Function(_FollowingUser) then) =
       __$FollowingUserCopyWithImpl<$Res>;
   @override
-  $Res call({String uid, String displyaName, String email, String createdAt});
+  $Res call({String uid, String displayName, String email});
 }
 
 /// @nodoc
@@ -116,26 +108,21 @@ class __$FollowingUserCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = freezed,
-    Object? displyaName = freezed,
+    Object? displayName = freezed,
     Object? email = freezed,
-    Object? createdAt = freezed,
   }) {
     return _then(_FollowingUser(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      displyaName: displyaName == freezed
-          ? _value.displyaName
-          : displyaName // ignore: cast_nullable_to_non_nullable
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: createdAt == freezed
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -145,23 +132,18 @@ class __$FollowingUserCopyWithImpl<$Res>
 
 class _$_FollowingUser implements _FollowingUser {
   _$_FollowingUser(
-      {required this.uid,
-      required this.displyaName,
-      required this.email,
-      required this.createdAt});
+      {required this.uid, required this.displayName, required this.email});
 
   @override
   final String uid;
   @override
-  final String displyaName;
+  final String displayName;
   @override
   final String email;
-  @override
-  final String createdAt;
 
   @override
   String toString() {
-    return 'FollowingUser(uid: $uid, displyaName: $displyaName, email: $email, createdAt: $createdAt)';
+    return 'FollowingUser(uid: $uid, displayName: $displayName, email: $email)';
   }
 
   @override
@@ -171,18 +153,16 @@ class _$_FollowingUser implements _FollowingUser {
             other is _FollowingUser &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
-                .equals(other.displyaName, displyaName) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt));
+                .equals(other.displayName, displayName) &&
+            const DeepCollectionEquality().equals(other.email, email));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(displyaName),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(createdAt));
+      const DeepCollectionEquality().hash(displayName),
+      const DeepCollectionEquality().hash(email));
 
   @JsonKey(ignore: true)
   @override
@@ -193,18 +173,15 @@ class _$_FollowingUser implements _FollowingUser {
 abstract class _FollowingUser implements FollowingUser {
   factory _FollowingUser(
       {required String uid,
-      required String displyaName,
-      required String email,
-      required String createdAt}) = _$_FollowingUser;
+      required String displayName,
+      required String email}) = _$_FollowingUser;
 
   @override
   String get uid;
   @override
-  String get displyaName;
+  String get displayName;
   @override
   String get email;
-  @override
-  String get createdAt;
   @override
   @JsonKey(ignore: true)
   _$FollowingUserCopyWith<_FollowingUser> get copyWith =>

@@ -57,7 +57,7 @@ class App extends StatelessWidget {
   build(BuildContext context) {
     return FirebaseAuth.instance.currentUser == null
         ? const LoginScreen()
-        : const SelectionScreen();
+        : const SelectScreen();
   }
 }
 

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:repayer/domain/data/user/user.dart';
+import 'package:repayer/data/datasource/user/user.dart';
 import 'package:riverpod/riverpod.dart';
 
 final userRepositoryProvider = Provider.autoDispose(

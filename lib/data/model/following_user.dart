@@ -6,8 +6,7 @@ part 'following_user.freezed.dart';
 class FollowingUser with _$FollowingUser {
   factory FollowingUser({
     required String uid,
-    required String displyaName,
+    required String displayName,
     required String email,
-    required String createdAt,
   }) = _FollowingUser;
 }

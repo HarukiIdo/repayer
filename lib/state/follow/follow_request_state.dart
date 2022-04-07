@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:repayer/domain/data/user/followRequest/follow_request.dart';
-import 'package:repayer/domain/data/user/user.dart';
+import 'package:repayer/data/datasource/user/followRequest/follow_request.dart';
+import 'package:repayer/data/datasource/user/user.dart';
 import 'package:repayer/domain/use_case/follow/get_follow_requests_use_case.dart';
 import 'package:repayer/domain/use_case/follow/stream_follow_request_use_case.dart';
 import 'package:repayer/domain/use_case/follow/get_follow_requests_use_case.dart';

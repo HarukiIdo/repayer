@@ -1,6 +1,6 @@
-import 'package:repayer/domain/data/functions/request_follow_result.dart';
-import 'package:repayer/domain/data/user/user.dart';
-import 'package:repayer/domain/repostiroy/functions/function_repostory.dart';
+import 'package:repayer/data/datasource/functions/request_follow_result.dart';
+import 'package:repayer/data/datasource/user/user.dart';
+import 'package:repayer/data/repostiroy/functions/function_repostory.dart';
 import 'package:repayer/domain/use_case/base_use_case.dart';
 import 'package:riverpod/riverpod.dart';
 

@@ -1,6 +1,6 @@
 import 'package:cloud_functions/cloud_functions.dart';
-import 'package:repayer/domain/data/functions/request_follow_result.dart';
-import 'package:repayer/domain/data/user/user.dart';
+import 'package:repayer/data/datasource/functions/request_follow_result.dart';
+import 'package:repayer/data/datasource/user/user.dart';
 import 'package:riverpod/riverpod.dart';
 
 final functionRepositoryProvider = Provider.autoDispose(
@@ -17,8 +17,7 @@ class FunctionRepository {
     required User user,
     required String email,
   }) async {
-    final callable =
-        _firebaseFunctions.httpsCallable('checkInviteRequestEmail');
+    final callable = _firebaseFunctions.httpsCallable('checkRequestEmail');
     final result = await callable.call<Map<String, dynamic>>(<String, dynamic>{
       'requestUserId': user.uid,
       'email': email,

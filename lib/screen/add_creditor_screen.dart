@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:repayer/state/follow/following_user_state.dart';
 
 final sendEmailTextProvider = StateProvider<String>((ref) => '');
 
@@ -8,7 +10,7 @@ class AddCreditorScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final emailTextEditingController = TextEditingController();
+    final emailTextEditingController = useTextEditingController();
     final email = ref.watch(sendEmailTextProvider);
     return Scaffold(
       appBar: AppBar(
@@ -47,7 +49,17 @@ class AddCreditorScreen extends HookConsumerWidget {
             ),
             const SizedBox(height: 8),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                final result = await ref
+                    .read(followingUserStateProvider.notifier)
+                    .requestFollow(email: email);
+
+                if (result != null) {
+                  if (result.result) {
+                    print("OK");
+                  }
+                }
+              },
               child: const Text('送信'),
             ),
           ],

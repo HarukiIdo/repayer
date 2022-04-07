@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:repayer/data/model/following_user.dart';
 
 part 'following_user_data.freezed.dart';
 part 'following_user_data.g.dart';
@@ -23,8 +24,8 @@ class FollowingUserData with _$FollowingUserData {
     return FollowingUserData.fromJson(json);
   }
 
-  FollowingUserData toFollowingUser() {
-    return FollowingUserData(
+  FollowingUser toFollowingUser() {
+    return FollowingUser(
       uid: uid,
       displayName: displayName,
       email: email,

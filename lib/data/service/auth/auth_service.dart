@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:riverpod/riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:repayer/domain/data/user/user.dart';
+import 'package:repayer/data/datasource/user/user.dart';
 
 part 'auth_service.freezed.dart';
 

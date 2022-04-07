@@ -1,6 +1,6 @@
-import 'package:repayer/domain/data/user/followRequest/follow_request.dart';
-import 'package:repayer/domain/data/user/user.dart';
-import 'package:repayer/domain/repostiroy/firestore/user/follow_request_repository.dart';
+import 'package:repayer/data/datasource/user/followRequest/follow_request.dart';
+import 'package:repayer/data/datasource/user/user.dart';
+import 'package:repayer/data/repostiroy/firestore/user/follow_request_repository.dart';
 import 'package:repayer/domain/use_case/base_use_case.dart';
 import 'package:riverpod/riverpod.dart';
 

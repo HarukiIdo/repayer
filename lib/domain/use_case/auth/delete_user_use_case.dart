@@ -1,5 +1,5 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:repayer/domain/service/auth/auth_service.dart';
+import 'package:repayer/data/service/auth/auth_service.dart';
 import 'package:repayer/domain/use_case/base_use_case.dart';
 
 final deleteUserUseCaseProvider = Provider.autoDispose(

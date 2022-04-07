@@ -1,6 +1,6 @@
 import 'package:async/async.dart';
-import 'package:repayer/domain/data/auth/auth_user.dart';
-import 'package:repayer/domain/service/auth/auth_service.dart';
+import 'package:repayer/data/datasource/auth/auth_user.dart';
+import 'package:repayer/data/service/auth/auth_service.dart';
 import 'package:repayer/domain/use_case/auth/delete_user_use_case.dart';
 import 'package:repayer/domain/use_case/auth/get_auth_user_use_case.dart';
 import 'package:repayer/domain/use_case/auth/sign_in_use_case.dart';
@@ -45,6 +45,10 @@ class AuthState extends StateNotifier<AuthUser> {
   }) async {
     final result = await Result.capture(
         _signUpUseCase.call(SignUpUseCaseUnit(email, password)));
+
+    if (result.isError) {
+      print('登録成功！');
+    }
   }
 
   Future<void> signIn({
@@ -59,6 +63,10 @@ class AuthState extends StateNotifier<AuthUser> {
         ),
       ),
     );
+
+    if (result.isError) {
+      print('ログイン成功！');
+    }
     if (result.isValue) {
       state = AuthUser(
         user: result.asValue!.value,

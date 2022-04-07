@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:riverpod/riverpod.dart';
-import 'package:repayer/domain/data/user/followRequest/follow_request.dart';
+import 'package:repayer/data/datasource/user/followRequest/follow_request.dart';
 
 final followRequestRepositoryProvider = Provider.autoDispose(
   (ref) => FollowRequestRepository(
