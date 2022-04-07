@@ -18,7 +18,8 @@
 [デザイン](https://www.figma.com/file/EA49D3fj7exSX6VD57mOmo/repayer?node-id=0%3A1)
 
 ## アーキテクチャ
-![スクリーンショット 2022-04-07 9 34 29](https://user-images.githubusercontent.com/72590721/162097177-a10af4b6-0595-4486-91c6-bd545c1b5937.png)
+![スクリーンショット 2022-04-07 9 52 31](https://user-images.githubusercontent.com/72590721/162098575-cb52d78b-e236-4368-80cb-b01f9e4f70d4.png)
+
 
 
 
