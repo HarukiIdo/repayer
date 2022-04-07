@@ -14,8 +14,8 @@ class UserRepository {
 
   DocumentReference<User> _doc({required String userId}) =>
       _collection.doc(userId).withConverter(
-            fromFirestore: (doc, option) => User.fromDocumentSnapshot(doc),
-            toFirestore: (user, option) => user.toJson(),
+            fromFirestore: (doc, _) => User.fromDocumentSnapshot(doc),
+            toFirestore: (user, _) => user.toJson(),
           );
 
   Future<User> fetch({required String userId}) async {

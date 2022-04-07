@@ -5,13 +5,26 @@ import 'package:repayer/state/follow/following_user_state.dart';
 
 final sendEmailTextProvider = StateProvider<String>((ref) => '');
 
-class AddCreditorScreen extends HookConsumerWidget {
-  const AddCreditorScreen({Key? key}) : super(key: key);
+class FollowRequestScreen extends HookConsumerWidget {
+  const FollowRequestScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final emailTextEditingController = useTextEditingController();
     final email = ref.watch(sendEmailTextProvider);
+    final followUsers = ref.watch(followingUserStateProvider).value;
+
+    if (followUsers == null) {
+      return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: const Text('返したい人を追加'),
+        ),
+        body: const Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text('返済者の追加'),

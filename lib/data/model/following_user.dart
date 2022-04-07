@@ -9,4 +9,12 @@ class FollowingUser with _$FollowingUser {
     required String displayName,
     required String email,
   }) = _FollowingUser;
+
+  factory FollowingUser.allUser() {
+    return FollowingUser(
+      uid: 'all',
+      displayName: '',
+      email: '',
+    );
+  }
 }

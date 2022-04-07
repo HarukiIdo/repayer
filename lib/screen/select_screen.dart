@@ -1,4 +1,4 @@
-import 'package:repayer/screen/add_creditor_screen.dart';
+import 'package:repayer/screen/follow_request_screen.dart';
 import 'package:repayer/screen/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class SelectScreen extends HookConsumerWidget {
             onPressed: () async {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const AddCreditorScreen(),
+                  builder: (context) => const FollowRequestScreen(),
                 ),
               );
             },
